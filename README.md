@@ -34,7 +34,7 @@ where
 isGreaterThan( value, comparator );
 ```
 
-The `comparator` argument is the value to be compared against and the `value` argument is the value to be validated.
+The `value` argument is the value to be validated and the `comparator` argument is the value to be compared against.
 
 
 ## Notes
