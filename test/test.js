@@ -5,7 +5,7 @@ var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	isGreaterThan = require( './../lib' );
 
 
 // VARIABLES //
@@ -20,9 +20,46 @@ describe( 'validate.io-greater-than', function tests() {
 	'use strict';
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( isGreaterThan ).to.be.a( 'function' );
 	});
 
-	it( 'should do something' );
+	it( 'should positively validate', function test() {
+		assert.ok( isGreaterThan( 1, 2 ) );
+	});
+
+	it( 'should negatively validate', function test() {
+		var values = [
+				0,
+				true,
+				[],
+				'5',
+				function(){},
+				null,
+				NaN,
+				{'foo':'bar'},
+				undefined
+			];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.ok( !isGreaterThan( 1, values[i] ) );
+		}
+	});
+
+	it( 'should negatively validate for a non-numeric comparator', function test() {
+		var values = [
+				true,
+				[],
+				'5',
+				function(){},
+				null,
+				NaN,
+				{'foo':'bar'},
+				undefined
+			];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.ok( !isGreaterThan( values[i], 1 ) );
+		}
+	});
 
 });

@@ -1,4 +1,4 @@
-greater-than
+Greater than
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -19,15 +19,30 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'validate.io-greater-than' );
+var isGreaterThan = require( 'validate.io-greater-than' );
+
+console.log( isGreaterThan( 1, 2 ) );
+// Returns true
+
+console.log( isGreaterThan( 1, 0 ) );
+// Returns false
 ```
+
+where 
+
+``` javascript
+isGreaterThan( comparator, value );
+```
+
+The `comparator` argument is the value to be compared against and the `value` argument is the value to be validated.
+
+
+## Notes
+
+This method validates that both the `comparator` and the `value` are both of type `number` before checking the comparison. For any non-numeric arguments, the method returns `false`.
 
 
 ## Examples
-
-``` javascript
-var lib = require( 'validate.io-greater-than' );
-```
 
 To run the example code from the top-level application directory,
 
