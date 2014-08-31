@@ -24,7 +24,7 @@ describe( 'validate.io-greater-than', function tests() {
 	});
 
 	it( 'should positively validate', function test() {
-		assert.ok( isGreaterThan( 1, 2 ) );
+		assert.ok( isGreaterThan( 2, 1 ) );
 	});
 
 	it( 'should negatively validate', function test() {
@@ -41,7 +41,7 @@ describe( 'validate.io-greater-than', function tests() {
 			];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			assert.ok( !isGreaterThan( 1, values[i] ) );
+			assert.ok( !isGreaterThan( values[i], 1 ) );
 		}
 	});
 
@@ -58,7 +58,7 @@ describe( 'validate.io-greater-than', function tests() {
 			];
 
 		for ( var i = 0; i < values.length; i++ ) {
-			assert.ok( !isGreaterThan( values[i], 1 ) );
+			assert.ok( !isGreaterThan( 1,  values[i] ) );
 		}
 	});
 

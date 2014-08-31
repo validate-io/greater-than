@@ -21,17 +21,17 @@ To use the module,
 ``` javascript
 var isGreaterThan = require( 'validate.io-greater-than' );
 
-console.log( isGreaterThan( 1, 2 ) );
+console.log( isGreaterThan( 2, 1 ) );
 // Returns true
 
-console.log( isGreaterThan( 1, 0 ) );
+console.log( isGreaterThan( 0, 1 ) );
 // Returns false
 ```
 
 where 
 
 ``` javascript
-isGreaterThan( comparator, value );
+isGreaterThan( value, comparator );
 ```
 
 The `comparator` argument is the value to be compared against and the `value` argument is the value to be validated.
@@ -39,7 +39,7 @@ The `comparator` argument is the value to be compared against and the `value` ar
 
 ## Notes
 
-This method validates that both the `comparator` and the `value` are both of type `number` before checking the comparison. For any non-numeric arguments, the method returns `false`.
+This method validates that both the `comparator` and the `value` are of type `number` before making the comparison. For non-numeric arguments, the method returns `false`.
 
 
 ## Examples
