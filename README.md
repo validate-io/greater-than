@@ -16,33 +16,36 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
-
 ``` javascript
 var isGreaterThan = require( 'validate.io-greater-than' );
-
-console.log( isGreaterThan( 2, 1 ) );
-// Returns true
-
-console.log( isGreaterThan( 0, 1 ) );
-// Returns false
 ```
 
-where 
+#### isGreaterThan( value, comparator )
+
+Validates if a `value` is greater than a `comparator` value.
 
 ``` javascript
-isGreaterThan( value, comparator );
+var a = 10,
+	b = 0;
+
+var bool = isGreaterThan( a, b );
+// returns true
 ```
 
-The `value` argument is the value to be validated and the `comparator` argument is the value to be compared against.
 
-
-## Notes
-
-This method validates that the `value` is of type `number` before making the comparison. For non-numeric values, the method returns `false`.
+__Note__: this method validates that both values are `numeric` before making the comparison. For non-numeric values, the method returns `false`.
 
 
 ## Examples
+
+``` javascript
+console.log( isGreaterThan( 2, 1 ) );
+// returns true
+
+console.log( isGreaterThan( 0, 1 ) );
+// returns false
+```
+
 
 To run the example code from the top-level application directory,
 
@@ -55,7 +58,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -75,16 +78,16 @@ $ make test-cov
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ open reports/coverage/lcov-report/index.html
+$ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
 Copyright &copy; 2014. Athan Reines.

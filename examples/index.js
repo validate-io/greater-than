@@ -1,7 +1,9 @@
+'use strict';
+
 var isGreaterThan = require( './../lib' );
 
 console.log( isGreaterThan( 2, 1 ) );
-// Returns true
+// returns true
 
 console.log( isGreaterThan( 0, 1 ) );
-// Returns false
+// returns false
