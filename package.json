@@ -1,6 +1,6 @@
 {
   "name": "validate.io-greater-than",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Validates if a value is greater than a comparator value.",
   "author": {
     "name": "Athan Reines",
