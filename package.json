@@ -29,7 +29,9 @@
     "validator",
     "valid",
     "comparison",
-    "greater than"
+    "greater than",
+    "is",
+    "isgreaterthan"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/greater-than/issues"
